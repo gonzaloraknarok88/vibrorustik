@@ -9,22 +9,34 @@ import { Button } from '@/components/ui/button'
 
 const heroSlides = [
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40%20%281%29-gA53VoEreLekB6myOmI4QkGbRu0tWU.jpeg",
-    title: "Pisos de Alta Resistencia",
-    subtitle: "Hormigon H-30 Certificado",
-    description: "Fabricantes de cierros prefabricados y pisos estampados de maxima durabilidad"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48-t57Z6D9kLoP5tqX8Iw5Lcq7VeX34B3.jpeg",
+    title: "Revestimientos Premium",
+    subtitle: "Chimeneas y Muros",
+    description: "Transforma tus espacios con nuestros revestimientos de piedra artificial de alta calidad"
   },
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.42-mrOXQOrnYXftXWYp4EHNK1AyqVFNbn.jpeg",
-    title: "Revestimientos 3D Premium",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%282%29-UQTrh3ZLkqVew62yZuVMVbO3p3fkMk.jpeg",
+    title: "Durmientes Rusticos",
+    subtitle: "Diseño Natural",
+    description: "Caminos de jardin con textura de madera que embellecen cada espacio exterior"
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%281%29-FtsUEyawemXMeCziZGuzyJeJ6PnZMa.jpeg",
+    title: "Senderos Modernos",
+    subtitle: "Paisajismo Premium",
+    description: "Soluciones elegantes con durmientes de hormigon texturado y gravilla decorativa"
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40-pro1zD4sz5K4iKTrfuW5TiwSQFxmcy.jpeg",
+    title: "Paneles Decorativos 3D",
     subtitle: "Texturas Exclusivas",
-    description: "Acabados rusticos y modernos que transforman cualquier espacio"
+    description: "Revestimientos con iluminacion dramatica que crean ambientes unicos"
   },
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40%20%282%29-yz279zuZ4Dzb2SDaN2SWUVwwheTrqE.jpeg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48%20%283%29-ip3tNDIQmfnGW7VLjM0eYO7yl0JAIW.jpeg",
     title: "Caminos de Jardin",
-    subtitle: "Durmientes Rusticos",
-    description: "Soluciones elegantes para paisajismo y exteriores de alta gama"
+    subtitle: "Proyectos Destacados",
+    description: "Durmientes instalados en paisajes espectaculares con vistas privilegiadas"
   },
 ]
 
@@ -67,9 +79,9 @@ export function HeroCarousel() {
                 priority
                 loading="eager"
               />
-              {/* Premium gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2d3748]/80 via-[#2d3748]/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2d3748]/60 via-transparent to-transparent" />
+              {/* Premium gradient overlay - subtle, no color distortion */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </motion.div>
           )
         ))}

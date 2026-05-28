@@ -11,53 +11,83 @@ const categories = [
   {
     title: "Pisos Estampados",
     description: "Hormigon H-30 de alta resistencia para exteriores",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.41%20%281%29-vBFes0nnqGmGfLrnitfjnl8KTduuHt.jpeg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%283%29-xCw2KL98QJd3KG041sqEXHI9lEKmSO.jpeg",
     count: "25+ disenos"
   },
   {
     title: "Revestimientos 3D",
     description: "Texturas premium para muros interiores y exteriores",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.42-mrOXQOrnYXftXWYp4EHNK1AyqVFNbn.jpeg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40-pro1zD4sz5K4iKTrfuW5TiwSQFxmcy.jpeg",
     count: "18+ disenos"
   },
   {
     title: "Caminos y Senderos",
     description: "Durmientes y baldosas para jardines elegantes",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40%20%282%29-yz279zuZ4Dzb2SDaN2SWUVwwheTrqE.jpeg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51-0JsFRPdhZTMwvNba0mFkiScKcUTdWB.jpeg",
     count: "12+ disenos"
   },
 ]
 
 const galleryImages = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.52%20%282%29-HGd15MpeYSj8CGDObg4GfcdufiIxOH.jpeg",
-    title: "Piscinas y Terrazas",
-    description: "Soluciones antideslizantes de alta calidad"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48-t57Z6D9kLoP5tqX8Iw5Lcq7VeX34B3.jpeg",
+    title: "Chimenea con Revestimiento",
+    description: "Piedra artificial de alta calidad para interiores elegantes"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40%20%282%29-yz279zuZ4Dzb2SDaN2SWUVwwheTrqE.jpeg",
-    title: "Caminos de Jardin",
-    description: "Durmientes que embellecen cada espacio"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%282%29-UQTrh3ZLkqVew62yZuVMVbO3p3fkMk.jpeg",
+    title: "Durmientes con Piedra Natural",
+    description: "Caminos de jardin con textura de madera y piedras de rio"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.46.01-r1N52aCOXFgDq7j1vmcdf8g9htUiLq.jpeg",
-    title: "Pisos Grafito",
-    description: "Acabados sofisticados para exteriores"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48%20%283%29-ip3tNDIQmfnGW7VLjM0eYO7yl0JAIW.jpeg",
+    title: "Sendero con Vista al Lago",
+    description: "Proyecto paisajistico con durmientes en terreno con pendiente"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.42-mrOXQOrnYXftXWYp4EHNK1AyqVFNbn.jpeg",
-    title: "Revestimientos 3D",
-    description: "Texturas que transforman interiores"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%281%29-FtsUEyawemXMeCziZGuzyJeJ6PnZMa.jpeg",
+    title: "Camino Moderno",
+    description: "Durmientes grafito sobre gravilla blanca con jardineria"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.46.04-FpSVD5e39lC27vc4AUHqM22QJ1R49r.jpeg",
-    title: "Variedad de Disenos",
-    description: "Multiples opciones para cada proyecto"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.46.02%20%284%29-570WzGeK05q8g0ABciKFvi6a5WDb0S.jpeg",
+    title: "Baldosa Pizarra",
+    description: "Pisos estampados sobre piedras de rio multicolor"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.46.02%20%283%29-vP7zAoQZHkbpzpS0e3NYD1KU7rIazW.jpeg",
-    title: "Colores Exclusivos",
-    description: "Paleta de tonos naturales y elegantes"
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.53%20%283%29-bRibhXc7SSq10LbOcWAlP4JV42q4q7.jpeg",
+    title: "Patio con Adoquines",
+    description: "Adoquines circulares para espacios de jardin con estilo"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.52%20%281%29-bAaNEZp3BQZHtveoAMRgVDq79f4ZJU.jpeg",
+    title: "Variedad de Colores",
+    description: "Adoquines rusticos en multiples tonos naturales"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40%20%282%29-ar0GZBX5baWWC1uczSk6OGUwq8iNfF.jpeg",
+    title: "Durmiente Textura Madera",
+    description: "Detalle de la textura realista de nuestros durmientes"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48%20%282%29-jHCjknnHjeUJ9JobYOcMm1OslTJWRI.jpeg",
+    title: "Camino con Gravilla",
+    description: "Durmientes madera sobre gravilla blanca decorativa"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.54-v9N4WzpA04mcqTGPKvhkTtCjX5P2RX.jpeg",
+    title: "Paneles de Pizarra",
+    description: "Baldosas grandes con textura de piedra natural"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.46.03%20%283%29-Zr1naC1p6PGSOecEKxmZ2XmVAAGBEt.jpeg",
+    title: "Baldosa Multitextura",
+    description: "Diseno exclusivo con patron de piedras variadas"
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48%20%281%29-Rhupe1E2h2k2D93IBRVtwXUnDUHQLg.jpeg",
+    title: "Colores Disponibles",
+    description: "Pisos estampados en rojo, grafito y gris natural"
   },
 ]
 
@@ -130,7 +160,7 @@ export function CategoriesSection() {
               />
               
               {/* Clean gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2d3748]/80 via-[#2d3748]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -185,7 +215,7 @@ export function CategoriesSection() {
           </div>
 
           {/* Main Carousel */}
-          <div className="relative rounded-2xl overflow-hidden h-[400px] sm:h-[500px] group">
+          <div className="relative rounded-2xl overflow-hidden h-[400px] sm:h-[550px] group">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -205,7 +235,7 @@ export function CategoriesSection() {
                   priority
                 />
                 {/* Clean gradient overlay - no color tint */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d3748]/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               </motion.div>
             </AnimatePresence>
 
@@ -249,7 +279,7 @@ export function CategoriesSection() {
             </button>
 
             {/* Dots Navigation */}
-            <div className="absolute bottom-8 right-8 sm:right-12 flex items-center gap-3">
+            <div className="absolute bottom-8 right-8 sm:right-12 flex items-center gap-2">
               {galleryImages.map((_, index) => (
                 <button
                   key={index}
@@ -257,7 +287,7 @@ export function CategoriesSection() {
                   aria-label={`Slide ${index + 1}`}
                   className={`transition-all duration-300 ${
                     index === currentSlide
-                      ? 'w-8 h-2 bg-[#e53e3e] rounded-full'
+                      ? 'w-6 h-2 bg-[#e53e3e] rounded-full'
                       : 'w-2 h-2 bg-white/50 rounded-full hover:bg-white/80'
                   }`}
                 />
@@ -265,15 +295,15 @@ export function CategoriesSection() {
             </div>
           </div>
 
-          {/* Thumbnail Preview */}
-          <div className="flex gap-4 mt-6 overflow-x-auto pb-4">
+          {/* Thumbnail Preview - Scrollable */}
+          <div className="flex gap-3 mt-6 overflow-x-auto pb-4 scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`relative flex-shrink-0 w-24 h-16 sm:w-32 sm:h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+                className={`relative flex-shrink-0 w-28 h-20 sm:w-36 sm:h-24 rounded-lg overflow-hidden transition-all duration-300 ${
                   index === currentSlide
-                    ? 'ring-2 ring-[#e53e3e] ring-offset-2 ring-offset-white scale-105'
+                    ? 'ring-3 ring-[#e53e3e] ring-offset-2 ring-offset-white scale-105'
                     : 'opacity-60 hover:opacity-100'
                 }`}
               >
@@ -282,7 +312,7 @@ export function CategoriesSection() {
                   alt={image.title}
                   fill
                   quality={80}
-                  sizes="128px"
+                  sizes="144px"
                   className="object-cover"
                 />
               </button>
