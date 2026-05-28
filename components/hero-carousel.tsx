@@ -2,28 +2,41 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const heroSlides = [
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40-sAWYJhZ8JMpPBCcuu1JrwAubRvv4J9.jpeg",
-    title: "Revestimientos que Definen el Lujo",
-    subtitle: "Texturas 3D de Alta Gama",
-    description: "Transformamos espacios con revestimientos únicos de calidad premium"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48-t57Z6D9kLoP5tqX8Iw5Lcq7VeX34B3.jpeg",
+    title: "Revestimientos Premium",
+    subtitle: "Chimeneas y Muros",
+    description: "Transforma tus espacios con nuestros revestimientos de piedra artificial de alta calidad"
   },
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.42%20%281%29-mIm44zoWeH13Rl5Cq9HkLJO12ul2uZ.jpeg",
-    title: "Durabilidad Corporativa",
-    subtitle: "Hormigón Estampado Premium",
-    description: "Pisos de alta resistencia para proyectos de gran escala"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%282%29-UQTrh3ZLkqVew62yZuVMVbO3p3fkMk.jpeg",
+    title: "Durmientes Rusticos",
+    subtitle: "Diseño Natural",
+    description: "Caminos de jardin con textura de madera que embellecen cada espacio exterior"
   },
   {
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.44%20%282%29-suympREralqFWXJNfoIvEzeMnefKid.jpeg",
-    title: "Elegancia sin Límites",
-    subtitle: "Revestimientos Decorativos",
-    description: "Diseños exclusivos que elevan cualquier proyecto arquitectónico"
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.51%20%281%29-FtsUEyawemXMeCziZGuzyJeJ6PnZMa.jpeg",
+    title: "Senderos Modernos",
+    subtitle: "Paisajismo Premium",
+    description: "Soluciones elegantes con durmientes de hormigon texturado y gravilla decorativa"
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.40-pro1zD4sz5K4iKTrfuW5TiwSQFxmcy.jpeg",
+    title: "Paneles Decorativos 3D",
+    subtitle: "Texturas Exclusivas",
+    description: "Revestimientos con iluminacion dramatica que crean ambientes unicos"
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-07%20at%2020.45.48%20%283%29-ip3tNDIQmfnGW7VLjM0eYO7yl0JAIW.jpeg",
+    title: "Caminos de Jardin",
+    subtitle: "Proyectos Destacados",
+    description: "Durmientes instalados en paisajes espectaculares con vistas privilegiadas"
   },
 ]
 
@@ -50,23 +63,19 @@ export function HeroCarousel() {
           index === currentSlide && (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.8 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 1 }}
               className="absolute inset-0"
             >
-              <Image
+              <img
                 src={slide.image}
                 alt={slide.title}
-                fill
-                quality={90}
-                sizes="100vw"
-                className="object-cover"
-                priority
-                loading="eager"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+              {/* Premium gradient overlay - subtle, no color distortion */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </motion.div>
           )
@@ -79,9 +88,9 @@ export function HeroCarousel() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-2xl"
             >
@@ -89,17 +98,13 @@ export function HeroCarousel() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="inline-block px-4 py-2 bg-gradient-to-r from-[#d4af37] to-[#f0d77a] text-[#800020] text-sm font-bold tracking-widest rounded-full mb-6"
+                className="inline-block px-4 py-2 bg-[#e53e3e] text-white text-sm font-bold tracking-widest rounded-full mb-6"
               >
                 {heroSlides[currentSlide].subtitle}
               </motion.span>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                {heroSlides[currentSlide].title.split(' ').map((word, i) => (
-                  <span key={i} className={i === heroSlides[currentSlide].title.split(' ').length - 1 ? 'text-gold-gradient' : ''}>
-                    {word}{' '}
-                  </span>
-                ))}
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight font-serif text-balance">
+                {heroSlides[currentSlide].title}
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
@@ -108,17 +113,23 @@ export function HeroCarousel() {
 
               <div className="flex flex-wrap gap-4">
                 <Button
+                  asChild
                   size="lg"
-                  className="bg-[#800020] hover:bg-[#5c0017] text-white px-8 py-6 text-lg font-semibold shadow-xl transition-all hover:scale-105"
+                  className="btn-vibro-primary px-8 py-6 text-lg font-semibold rounded-lg"
                 >
-                  Ver Catálogo
+                  <Link href="/catalogo">
+                    Ver Catalogo
+                  </Link>
                 </Button>
                 <Button
+                  asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#800020] px-8 py-6 text-lg font-semibold transition-all bg-transparent"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#2d3748] px-8 py-6 text-lg font-semibold transition-all bg-transparent rounded-lg"
                 >
-                  Solicitar Cotización
+                  <a href="https://wa.me/c/192427470114948" target="_blank" rel="noopener noreferrer">
+                    Cotizar Ahora
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -130,7 +141,8 @@ export function HeroCarousel() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-6">
         <button
           onClick={prevSlide}
-          className="p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all backdrop-blur-sm"
+          className="p-3 rounded-full bg-white/20 hover:bg-[#e53e3e] text-white transition-all backdrop-blur-sm"
+          aria-label="Anterior"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -140,9 +152,10 @@ export function HeroCarousel() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
+              aria-label={`Slide ${index + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide 
-                  ? 'w-12 bg-gradient-to-r from-[#d4af37] to-[#f0d77a]' 
+                  ? 'w-12 bg-[#e53e3e]' 
                   : 'w-2 bg-white/50 hover:bg-white/80'
               }`}
             />
@@ -151,7 +164,8 @@ export function HeroCarousel() {
 
         <button
           onClick={nextSlide}
-          className="p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all backdrop-blur-sm"
+          className="p-3 rounded-full bg-white/20 hover:bg-[#e53e3e] text-white transition-all backdrop-blur-sm"
+          aria-label="Siguiente"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -161,7 +175,7 @@ export function HeroCarousel() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 right-8 z-20 text-white/70"
+        className="absolute bottom-8 right-8 z-20 text-white/70 hidden md:block"
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs tracking-widest rotate-90 origin-center">SCROLL</span>

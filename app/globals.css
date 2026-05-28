@@ -10,19 +10,19 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.35 0.15 15);
+  --primary: oklch(0.55 0.22 25);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.75 0.12 85);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.55 0.22 25);
+  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.35 0.15 15);
+  --ring: oklch(0.55 0.22 25);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -30,15 +30,16 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
   
-  /* Custom VIBRORUSTIK colors */
-  --burgundy: #800020;
-  --burgundy-dark: #5c0017;
-  --burgundy-light: #a3002a;
-  --gold: #d4af37;
-  --gold-light: #f0d77a;
-  --gold-dark: #a68928;
-  --purple: #4a1942;
-  --purple-light: #6b2c5f;
+  /* VIBRORUSTIK Industrial Premium Palette */
+  --vibro-red: #e53e3e;
+  --vibro-red-dark: #c53030;
+  --vibro-red-light: #fc8181;
+  --vibro-gray: #2d3748;
+  --vibro-gray-light: #4a5568;
+  --vibro-gray-lighter: #718096;
+  --vibro-stone: #e2e8f0;
+  --vibro-white: #ffffff;
+  --vibro-off-white: #f7fafc;
 }
 
 .dark {
@@ -69,7 +70,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Playfair Display', 'Inter', sans-serif;
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -100,15 +102,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Custom colors */
-  --color-burgundy: var(--burgundy);
-  --color-burgundy-dark: var(--burgundy-dark);
-  --color-burgundy-light: var(--burgundy-light);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-purple: var(--purple);
-  --color-purple-light: var(--purple-light);
+  /* VIBRORUSTIK theme colors */
+  --color-vibro-red: var(--vibro-red);
+  --color-vibro-red-dark: var(--vibro-red-dark);
+  --color-vibro-gray: var(--vibro-gray);
+  --color-vibro-gray-light: var(--vibro-gray-light);
+  --color-vibro-stone: var(--vibro-stone);
 }
 
 @layer base {
@@ -116,7 +115,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -126,46 +128,69 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f7fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--burgundy);
+  background: var(--vibro-gray);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--burgundy-dark);
+  background: var(--vibro-red);
 }
 
-/* Gold gradient text */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #d4af37 0%, #f0d77a 50%, #a68928 100%);
+/* Premium Button Styles */
+.btn-vibro-primary {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(229, 62, 62, 0.39);
+}
+
+.btn-vibro-primary:hover {
+  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 62, 62, 0.5);
+}
+
+/* Text gradient for brand name */
+.text-vibro-gradient {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+/* Glassmorphism navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* WhatsApp pulse animation */
-@keyframes whatsapp-pulse {
+/* Logo circle style as per spec */
+.logo-circle {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp pulse animation - RED as per spec */
+@keyframes whatsapp-pulse-red {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.6);
   }
   50% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 15px rgba(229, 62, 62, 0);
   }
 }
 
-.whatsapp-pulse {
-  animation: whatsapp-pulse 2s infinite;
+.whatsapp-pulse-red {
+  animation: whatsapp-pulse-red 2s infinite;
 }
 
 /* Floating animation */
@@ -180,4 +205,40 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Premium card hover effect */
+.card-premium {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Section divider */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e53e3e 0%, #c53030 100%);
+  margin: 0 auto;
+}
+
+/* Technical badge style */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(45, 55, 72, 0.1);
+  color: #2d3748;
+}
+
+/* Image quality enhancement */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }

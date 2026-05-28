@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -16,15 +16,22 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'VIBRORUSTIK | Pisos y Revestimientos Premium',
-  description: 'Empresa líder en pisos y revestimientos de alta gama. Soluciones elegantes y duraderas para arquitectos, constructoras y proyectos de alto estándar.',
-  keywords: 'pisos, revestimientos, hormigón estampado, piedra, concreto decorativo, pisos premium, Argentina',
+  title: 'VIBRORUSTIK | Cierros Prefabricados y Revestimientos Premium Chile',
+  description: 'Fabricantes de cierros prefabricados de hormigon H-30 y revestimientos rusticos de alta resistencia. Pisos estampados, durmientes y baldosas para construccion y paisajismo en Santiago, Chile.',
+  keywords: 'cierros prefabricados, hormigon H-30, pisos estampados, revestimientos rusticos, durmientes, baldosas, hormigon vibrado, Santiago, Chile',
   authors: [{ name: 'VIBRORUSTIK' }],
   openGraph: {
-    title: 'VIBRORUSTIK | Pisos y Revestimientos Premium',
-    description: 'Revestimientos que definen el lujo. Soluciones corporativas de alta durabilidad.',
+    title: 'VIBRORUSTIK | Cierros Prefabricados y Revestimientos Premium Chile',
+    description: 'Fabricacion de alta resistencia H-30. Cierros prefabricados, pisos estampados y revestimientos para contratistas y constructoras.',
     type: 'website',
+    locale: 'es_CL',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#e53e3e',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -33,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-white text-gray-900">
+    <html lang="es" className={`${playfair.variable} ${inter.variable} bg-white`}>
+      <body className="font-sans antialiased bg-white text-[#2d3748]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
