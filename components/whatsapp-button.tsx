@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { MessageCircle } from 'lucide-react'
 
 export function WhatsAppButton() {
   return (
@@ -20,23 +19,24 @@ export function WhatsAppButton() {
         whileHover={{ opacity: 1, x: 0 }}
         className="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap"
       >
-        <div className="bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl">
+        <div className="bg-[#2d3748] text-white text-sm px-4 py-2 rounded-lg shadow-xl font-medium">
           Cotiza tu Proyecto
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45" />
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-[#2d3748] rotate-45" />
         </div>
       </motion.div>
 
-      {/* Button */}
+      {/* Button - RED as per spec #e53e3e */}
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="relative w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse cursor-pointer"
+        className="relative w-16 h-16 rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse-red cursor-pointer"
+        style={{ background: 'linear-gradient(135deg, #e53e3e 0%, #c53030 100%)' }}
       >
         {/* Pulse Rings */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" />
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-40" />
+        <span className="absolute inset-0 rounded-full bg-[#e53e3e] animate-ping opacity-25" />
+        <span className="absolute inset-0 rounded-full bg-[#e53e3e] animate-pulse opacity-40" />
         
-        {/* Icon */}
+        {/* WhatsApp Icon */}
         <svg
           viewBox="0 0 24 24"
           className="w-8 h-8 text-white fill-current relative z-10"

@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, User, Building2 } from 'lucide-react'
+import { Menu, X, Building2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
-  { href: '/catalogo', label: 'Catálogo de Revestimientos' },
-  { href: '/proyectos', label: 'Nuestros Proyectos' },
+  { href: '/catalogo', label: 'Catálogo' },
+  { href: '/proyectos', label: 'Proyectos' },
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/contacto', label: 'Contacto' },
 ]
@@ -33,16 +33,20 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
+        isScrolled ? 'glass-navbar shadow-lg' : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 sm:h-28">
-          {/* Logo */}
+          {/* Logo - Circular as per spec */}
           <Link href="/" className="flex items-center gap-4">
             <motion.div 
-              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-xl border-3 border-[#d4af37] animate-float"
-              whileHover={{ scale: 1.1 }}
+              className="relative w-20 h-20 sm:w-24 sm:h-24 logo-circle overflow-hidden animate-float"
+              style={{ 
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                border: '3px solid #e53e3e'
+              }}
+              whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
               <Image
@@ -56,11 +60,11 @@ export function Navbar() {
               />
             </motion.div>
             <div className="hidden sm:block">
-              <h1 className="text-3xl font-bold tracking-tight">
-                <span className="text-[#800020]">VIBRO</span>
-                <span className="text-gold-gradient">RUSTIK</span>
+              <h1 className="text-3xl font-bold tracking-tight font-serif">
+                <span className="text-[#2d3748]">VIBRO</span>
+                <span className="text-vibro-gradient">RUSTIK</span>
               </h1>
-              <p className="text-sm text-gray-600 tracking-widest">Pisos y Revestimientos</p>
+              <p className="text-sm text-[#718096] tracking-widest">Pisos y Revestimientos</p>
             </div>
           </Link>
 
@@ -70,29 +74,31 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-[#800020] transition-colors text-sm font-medium tracking-wide relative group"
+                className="text-[#2d3748] hover:text-[#e53e3e] transition-colors text-sm font-medium tracking-wide relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#800020] to-[#d4af37] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e53e3e] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - RED as per spec */}
           <div className="hidden lg:flex items-center gap-4">
             <Button
-              variant="outline"
-              className="border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition-all"
+              asChild
+              className="btn-vibro-primary px-6 py-2 rounded-lg"
             >
-              <Building2 className="w-4 h-4 mr-2" />
-              Acceso Clientes / B2B
+              <a href="https://wa.me/c/192427470114948" target="_blank" rel="noopener noreferrer">
+                <Building2 className="w-4 h-4 mr-2" />
+                Cotizar Ahora
+              </a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-700"
+            className="lg:hidden p-2 text-[#2d3748]"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -106,7 +112,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-gray-200"
+            className="lg:hidden bg-white border-t border-gray-200"
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -114,17 +120,18 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-700 hover:text-[#800020] transition-colors font-medium py-2"
+                  className="block text-[#2d3748] hover:text-[#e53e3e] transition-colors font-medium py-2"
                 >
                   {link.label}
                 </Link>
               ))}
               <Button
-                variant="outline"
-                className="w-full border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white mt-4"
+                asChild
+                className="w-full btn-vibro-primary mt-4"
               >
-                <User className="w-4 h-4 mr-2" />
-                Acceso Clientes / B2B
+                <a href="https://wa.me/c/192427470114948" target="_blank" rel="noopener noreferrer">
+                  Cotizar Ahora
+                </a>
               </Button>
             </div>
           </motion.div>
