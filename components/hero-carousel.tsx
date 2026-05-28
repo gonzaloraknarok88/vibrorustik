@@ -69,15 +69,10 @@ export function HeroCarousel() {
               transition={{ duration: 1 }}
               className="absolute inset-0"
             >
-              <Image
+              <img
                 src={slide.image}
                 alt={slide.title}
-                fill
-                quality={95}
-                sizes="100vw"
-                className="object-cover"
-                priority
-                loading="eager"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Premium gradient overlay - subtle, no color distortion */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />

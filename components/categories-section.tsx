@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -149,14 +148,11 @@ export function CategoriesSection() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer card-premium"
             >
-              {/* Background Image - No color filter */}
-              <Image
+              {/* Background Image - Native img for full quality */}
+              <img
                 src={category.image}
                 alt={category.title}
-                fill
-                quality={90}
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
               {/* Clean gradient overlay */}
@@ -225,14 +221,10 @@ export function CategoriesSection() {
                 transition={{ duration: 0.7 }}
                 className="absolute inset-0"
               >
-                <Image
+                <img
                   src={galleryImages[currentSlide].src}
                   alt={galleryImages[currentSlide].title}
-                  fill
-                  quality={95}
-                  sizes="100vw"
-                  className="object-cover"
-                  priority
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 {/* Clean gradient overlay - no color tint */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -307,13 +299,10 @@ export function CategoriesSection() {
                     : 'opacity-60 hover:opacity-100'
                 }`}
               >
-                <Image
+                <img
                   src={image.src}
                   alt={image.title}
-                  fill
-                  quality={80}
-                  sizes="144px"
-                  className="object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </button>
             ))}
